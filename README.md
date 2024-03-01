@@ -11,6 +11,7 @@
 **Description**
 
 **Goal**
+
 The goal of this project is, to how we can build a Reusable KYC credential System on ICP
 
 **User Flow 1**
