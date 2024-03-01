@@ -1,7 +1,7 @@
 # Overview
 
 
-![New(1)](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/e0e3ad7d-7c62-4024-9947-fd861eb11132)
+
 
 
 
