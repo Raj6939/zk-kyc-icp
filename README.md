@@ -1,11 +1,11 @@
 **Overview**
 
 
-    ![image](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/3a4a6d24-31f5-4ec1-8237-228bb0e4f758)
 
 
 
 
+![Screenshot from 2024-03-01 21-11-27](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/4dd9f187-0074-4b2b-b353-03cbd42777de)
 
 
 
