@@ -1,7 +1,9 @@
 # Overview
 
 
-![Uploading New-1.png…]()
+
+![New(2)](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/2c926f61-a847-406f-8ec1-65dc0035e10b)
+
 
 
 
@@ -24,7 +26,9 @@ The goal of this project is, to how we can build a Reusable KYC credential Syste
 
      KYC is an off-chain process that happens on the application level. In the User KYC process various types of credentials are issued such as Proof of personhood, Proof of Age, and Proof of Citizenship as per IC [VC](https://github.com/dfinity/internet-identity/blob/main/docs/vc-spec.md#ii-verifiable-credential-spec-mvp) Spec. In this scenario, the DApp 1 is the Credential Issuer and the User is the Holder of the credential.
 
-6. 
+6. KYC credentials are issued to the Holder and stored in the Users Credential Manager.
+7. Credential Attestation is anchored to the smart contract
+8. 
 
 
 
