@@ -2,7 +2,8 @@
 
 
 
-![New-12](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/42d75420-b682-408e-97d3-27b205593633)
+![ICP-kyc-widget-flow drawio](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/05d6ce6d-ab48-4dc4-aadd-eeb4f77510f6)
+
 
 
 
@@ -14,38 +15,21 @@ The goal of this project is, to how we can build a Reusable KYC credential Syste
 
 **User Flow 1**
 
-1.   The user can log in to the Credential Manager(wallet).
+1. When a user comes to any DApp (Verifier App), to connect with the it and use the DApps services user needs to do KYC. Here User gets redirected to the KYC provider via the `KYC-Widget`.
 
-2.   User can onboard into DApp by providing Internet Identity through Credential Manager.
+2. The `KYC-Widget` consists of a few verifications such as Face check(liveliness check), Passport Document Verification, etc.
+ 
+3. At `KYC-Widget` Various Verifications get done and claims of those get sent to the Credential Issuer to issue credentials. The `KYC-widget` further calls the `Credential-issuer` once the KYC is completed at the KYC widget. The `Credential-issuer` gets the KYC credentials claims and issues various types of Credentials in the format of [Verifiable Credentials (VC)](https://github.com/dfinity/internet-identity/blob/main/docs/vc-spec.md#ii-verifiable-credential-spec-mvp) spec. For example: Proof of Personhood, Proof of Age, Proof of Citizenship, etc.
 
-3.   IF the user's wallet does not have KYCed then, the user goes through the KYC process.
+4. These Credentials get stored in the Users `ID-Wallet` and their credential status gets anchored on the Verifiable Credential Status Registry (VDR). This VDR is a canister smart contract on the ICP blockchain.
 
-4.   DApp 1 has a canister smart contract that uses Https Outcalls for doing the User's KYC.
+5. Now once the user has various credentials in his `ID-Wallet`, the Verifier App can request credentials/proof. Whenever required, the user can mint SBT or custom tokens for generated ZK-proofs in his `ID-wallet`. For miniting SBT or NFT, the Verifier App can request credentials from the user.
 
-     This step uses [ICRC-21](https://github.com/dfinity/wg-identity-authentication/blob/main/topics/icrc_21_consent_msg.md) consent management standard by IC.
+6. This request is followed by [DIF-Presenation-request](https://identity.foundation/presentation-exchange/spec/v2.0.0/) format. The verifier can request credentials from the user by mentioning `IssuerId` and `credentialSpec`.
 
-     KYC is an off-chain process that happens on the application level. In the User KYC process various types of credentials are issued such as Proof of personhood, Proof of Age, and Proof of Citizenship as per IC [VC](https://github.com/dfinity/internet-identity/blob/main/docs/vc-spec.md#ii-verifiable-credential-spec-mvp) Spec. In this scenario, the DApp 1 is the Credential Issuer and the User is the Holder of the credential.
+6. Once the User gets the request from Verifier, the user can generate zero-knowledge proof of the given credentialSpec. For ex: zero-knowledge-proof for membership or zk-proof of Age to mint NFT and SBT from NFT, SBT canister smart contract.
 
-6. KYC credentials are issued to the Holder.
-7. The DApp issuer gets the KYC credential and converts it to a Verifiable credential(VC) format, for Proof of personhood, Proof of Age, and Proof of Citizenship.
-8. The Prepared VC is then sent to the Holder Credential Manager to store.
-9. Upon credential storing, the credential Manager gives a response to the DApp 1 Issuer
-10. The response is then further conveyed to the Https Outcalls and canister, for Credential Attestation(VC ID) anchoring on smart contract.
-11. Credential Attestation is anchored to the smart contract.
-12. Smart contract gives response to DApp1 for Credential Attestation Confirmation.
-
-**User Flow 2**
-
-Now the user has few Verifiable credentials in his Credential Manager. Users can now go to DApp 2 and use the Same KYC-Credential in a reusable way
-
-14. The user logged in to DApp 2 by Internet Identity, through Credential Manager.
-15. Since DApp 2 already knows and trusts on Issuer, no credential Manifest is required. It directly requests the Holder for credential Type (ex: Proof of Age), through a [DIF-Presentation Request Exchange](https://identity.foundation/presentation-exchange/spec/v2.0.0/).
-16. User Prepare Verifiable Presentation and share it by generating Zero-Knowledge Proof with the DApp 2.
-17. DApp 2 calls its own smart contract 2 and it further calls the Issuers smart contract.
-18. smart contract 2 requests for verification of the proof to the issuer's smart contract 1 where the Credential Attestation is anchored.
-19. Issuer smart contract sends a response after verifying proof to the Smart contract 2.
-20. Smart contract 2 confirms the verification and sends success response to the DApp2 and further to the Holder
-
+For Verifying Credential Status Verifier can query VDR Canister Smart contract and check revocation of Credentials.
 
 
 
