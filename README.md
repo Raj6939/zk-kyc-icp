@@ -27,7 +27,7 @@ The goal of this project is, to how we can build a Reusable KYC credential Syste
 
 The credential issuer has a unique `CanisterID` to update the credential status on the smart contract
 
-7. Now once the user has various credentials in his `ID-Wallet`, the Verifier App can request credentials/proof. Whenever required, the user can mint SBT or custom tokens for generated ZK-proofs in his `ID-wallet`. For miniting NFT on ICP followed by [DIP-721](https://github.com/Psychedelic/DIP721) standard, the Verifier App can request credentials from the user.
+7. Now once the user has various credentials in his `ID-Wallet`, the Verifier App can request credentials/proof. Whenever required, the user can mint NFT or custom tokens for generated ZK-proofs in his `ID-wallet`. For miniting NFT on ICP followed by [DIP-721](https://github.com/Psychedelic/DIP721) standard, the Verifier App can request credentials from the user.
 
 8. This request is followed by [DIF-Presenation-request](https://identity.foundation/presentation-exchange/spec/v2.0.0/) format. The verifier can request credentials from the user by mentioning `IssuerId` and `credentialSpec`.
 
