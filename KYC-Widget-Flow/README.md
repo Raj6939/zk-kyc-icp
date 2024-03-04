@@ -22,7 +22,7 @@
 
    ![Screenshot from 2024-03-01 19-02-54](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/1fad0ed0-bb18-4976-b9e0-075078de347a)
 
-The KYC Issuer(DApp) issues various credentials at each step of Verification shown above. After successful onboarding, the user has Proof of Personhood, Proof of Citizenship, Proof of Age (above 18).
-The user can see all these proofs in his wallet (Web). Below is the view of how user wallet would look like
+The KYC Issuer(DApp) issues various credentials at each step of Verification shown above. After successful onboarding, the user has Proof of Personhood, Proof of Citizenship, and Proof of Age (above 18).
+The user can see all these proofs in his ID wallet (User-Id Dashboard). 
 
     
