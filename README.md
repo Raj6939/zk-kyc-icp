@@ -14,7 +14,7 @@
 
 The goal of this project is, to how we can build a Reusable KYC credential System on ICP
 
-**User Flow 1**
+**User Flow**
 
 1. When a user comes to any DApp (Verifier App), to connect with it and use the DApps services user needs to do KYC. Here User gets redirected to the KYC provider via the `KYC-Widget`.
 
