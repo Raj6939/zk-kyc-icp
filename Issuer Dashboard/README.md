@@ -2,6 +2,8 @@
 
 **Issuer Dashboard**
 
+The Issuer Dashboard is to take a look at how many credentials are issued and their status.
+Through this dashboard, the issuer can see users' documents collected while doing KYC and could perform actions for issued credential
 
 ![issuer-dash-1](https://github.com/Raj6939/zk-kyc-icp/assets/67961128/39cc13a5-839d-49af-a00e-916bd3571e7a)
 
